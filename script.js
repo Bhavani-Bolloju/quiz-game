@@ -25,7 +25,6 @@ nextBtn.addEventListener("click", function () {
 });
 
 prevBtn.addEventListener("click", function () {
-  // console.log(currentBox);
   if (currentBox <= 0) {
     return;
   }
