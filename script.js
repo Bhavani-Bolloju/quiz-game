@@ -5,6 +5,7 @@ const prevBtn = document.querySelector(".prev-btn");
 const submitBtn = document.querySelector(".submit-btn");
 const questionBoxes = document.querySelectorAll(".box");
 const progressStatus = document.querySelector(".progress-status");
+console.log(progressStatus);
 // console.log(questionBoxes);
 
 const solutions = {
@@ -79,5 +80,5 @@ section.addEventListener("click", function (e) {
   optionChoose.classList.add("selectedOption");
   const answer = optionChoose.dataset.option;
 
-  console.log(group, answer, solutions[group] === answer);
+  // console.log(group, answer, solutions[group] === answer);
 });

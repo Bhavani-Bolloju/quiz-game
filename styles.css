@@ -51,6 +51,16 @@ section {
 .progress-bar {
   padding: 2rem;
 }
+.progress {
+  width: 90%;
+  border: 1px solid gray;
+  margin: 0 auto;
+  border-radius: 1rem;
+}
+.progress-status {
+  padding: 0.2rem;
+  background-color: blueviolet;
+}
 
 .box {
   display: flex;
