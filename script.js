@@ -5,8 +5,6 @@ const prevBtn = document.querySelector(".prev-btn");
 const submitBtn = document.querySelector(".submit-btn");
 const questionBoxes = document.querySelectorAll(".box");
 const progressStatus = document.querySelector(".progress-status");
-console.log(progressStatus);
-// console.log(questionBoxes);
 
 const solutions = {
   1: "1a",
@@ -69,8 +67,7 @@ prevBtn.addEventListener("click", function () {
 
 //adding event handler to each answer
 
-const section = document.querySelector(".section");
-section.addEventListener("click", function (e) {
+document.querySelector(".container").addEventListener("click", function (e) {
   const optionChoose = e.target;
   if (!optionChoose.classList.contains("option")) return;
   const optionGroup = optionChoose.closest(".options");
@@ -79,6 +76,4 @@ section.addEventListener("click", function (e) {
   options.forEach((item) => item.classList.remove("selectedOption"));
   optionChoose.classList.add("selectedOption");
   const answer = optionChoose.dataset.option;
-
-  // console.log(group, answer, solutions[group] === answer);
 });

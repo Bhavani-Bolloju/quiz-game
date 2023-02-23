@@ -41,7 +41,7 @@ nav {
 main {
 }
 
-section {
+.container {
   max-width: 100rem;
   overflow: hidden;
   position: relative;
@@ -91,11 +91,21 @@ h3 {
   padding: 1rem;
 }
 
+.options div:hover {
+  cursor: pointer;
+  background-color: #d7d7d7;
+}
+
+.selectedOption {
+  background-color: #d7d7d7;
+}
+
 .btns {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  padding: 3rem;
+  justify-content: flex-end;
+  gap: 5rem;
+  padding: 3rem 5rem;
 }
 
 .btns button {
