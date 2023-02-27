@@ -13,11 +13,22 @@ html {
 body {
   font-family: "Inter", sans-serif;
   font-size: 1.6rem;
-  width: 75%;
   margin: 0 auto;
+  min-height: 100vh;
+  color: #eaebc6;
+  background: linear-gradient(15deg, #babd42, #6e9086);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.grid {
+  width: 75%;
+  column-gap: 2rem;
+  margin: auto;
+  height: 75%;
   display: grid;
   grid-template-columns: 30% 1fr;
-  column-gap: 2rem;
 }
 
 h1 {
@@ -27,8 +38,9 @@ h1 {
 }
 
 nav {
-  border: 1px solid grey;
+  border: 1px solid #c8ca68;
   padding: 3rem 2rem;
+  /* height: inherit; */
 }
 
 .nav-list {
@@ -39,7 +51,7 @@ nav {
   font-size: 1.5rem;
 }
 .nav-items {
-  background-color: #eee;
+  /* background-color: #eee; */
   padding: 1rem;
 }
 
@@ -48,11 +60,11 @@ nav {
 }
 
 .active {
-  border: 1px solid rgb(68, 68, 68);
+  border: 1px solid #c8ca68;
 }
 
 main {
-  border: 1px solid gray;
+  border: 1px solid #c8ca68;
 }
 
 .questionnaires {
@@ -88,13 +100,14 @@ main {
 
 .progress {
   width: 80%;
-  border: 1px solid gray;
+  border: 1px solid #babd42;
   margin: 0 auto;
   border-radius: 1rem;
 }
 .progress-status {
-  padding: 0.3rem;
-  background-color: blueviolet;
+  padding: 0.5rem;
+  background: linear-gradient(to bottom, #6e9086, #babd42);
+  border-radius: 5rem;
 }
 
 .box {
@@ -112,7 +125,7 @@ main {
 
 h3 {
   font-size: 2rem;
-  margin-bottom: 2.4rem;
+  margin-bottom: 3rem;
 }
 
 .options {
@@ -123,17 +136,16 @@ h3 {
 
 .options div {
   font-size: 1.6rem;
-  border: 1px solid grey;
+  border: 1px solid #babd42;
   padding: 1rem;
 }
 
 .options div:hover {
   cursor: pointer;
-  background-color: #d7d7d7;
 }
 
 .selectedOption {
-  background-color: #d7d7d7;
+  background-color: #c0c45545;
 }
 
 .btns {
@@ -146,8 +158,9 @@ h3 {
 
 .btns button {
   background-color: transparent;
-  border: 1px solid black;
+  border: 1px solid #d6d78e;
   padding: 0.5rem 2rem;
+  color: #5d5f21;
 }
 
 .btns button {
@@ -159,6 +172,6 @@ h3 {
 }
 
 .incorrect {
-  border: 2px solid #f78699;
-  background-color: pink;
+  border: 2px solid #babd42;
+  background-color: #b7c8c36a;
 }
