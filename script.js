@@ -10,11 +10,8 @@ const section_questionnaires = document.querySelector(".questionnaires");
 const total = document.querySelector(".total");
 const correct = document.querySelector(".correct");
 const inCorrect = document.querySelector(".inCorrect");
-
 const results = document.querySelector(".results");
-
 const navList = document.querySelector(".nav-list");
-
 const navItems = document.querySelectorAll(".nav-items");
 
 const solutions = {
@@ -35,6 +32,7 @@ const moveBoxes = function (currentBox) {
   });
   progressStatus.style.width = `${(currentBox + 1) * 20}%`;
 };
+
 moveBoxes(currentBox);
 
 const activeQuestion = function (currentBox) {
@@ -45,44 +43,43 @@ const activeQuestion = function (currentBox) {
 
 activeQuestion(currentBox);
 
-if (currentBox < 4) {
-  submitBtn.style.display = "none";
-}
+const toggleButtons = function (currentBox) {
+  if (currentBox > 0) {
+    prevBtn.classList.remove("hide");
+  }
+  if (currentBox >= 4) {
+    submitBtn.classList.remove("hide");
+    nextBtn.classList.add("hide");
+  }
+};
 
-if (currentBox <= 0) {
-  prevBtn.style.display = "none";
-}
-
+//NEXT BUTTON
 nextBtn.addEventListener("click", function () {
   if (currentBox >= questionBoxes.length - 1) {
     return;
   }
   currentBox++;
 
-  if (currentBox > 0) {
-    prevBtn.style.display = "inline-block";
-  }
-  if (currentBox >= 4) {
-    submitBtn.style.display = "inline-block";
-    nextBtn.style.display = "none";
-  }
+  toggleButtons(currentBox);
   moveBoxes(currentBox);
-
   activeQuestion(currentBox);
 });
 
+//PREV BUTTON
 prevBtn.addEventListener("click", function () {
   if (currentBox <= 0) {
     return;
   }
   currentBox--;
+
   if (currentBox < 4) {
-    nextBtn.style.display = "inline-block";
-    submitBtn.style.display = "none";
+    nextBtn.classList.remove("hide");
+    submitBtn.classList.add("hide");
   }
   if (currentBox <= 0) {
-    prevBtn.style.display = "none";
+    prevBtn.classList.add("hide");
   }
+
   activeQuestion(currentBox);
   moveBoxes(currentBox);
 });
@@ -116,13 +113,13 @@ submitBtn.addEventListener("click", function () {
   inCorrect.textContent = inCorrectAnswers.length;
   document.querySelector(".q-5").classList.remove("active");
 
-  // console.log(inCorrectAnswers);
+  //highlighting the incorrect answer
   inCorrectAnswers.forEach((item) =>
     document.querySelector(`.q-${item[0]}`).classList.add("incorrect")
   );
 });
 
-// console.log(section_questionnaires, results);
+// HIGHLIGHTING THE NAV LINK
 navList.addEventListener("click", function (e) {
   const item = e.target.closest(".nav-items");
   navItems.forEach((item) => item.classList.remove("active"));
@@ -131,4 +128,10 @@ navList.addEventListener("click", function (e) {
   const currentItem = +item.dataset.link - 1;
   moveBoxes(currentItem);
   currentBox = currentItem;
+  if (currentBox <= 0) {
+    prevBtn.classList.add("hide");
+    submitBtn.classList.add("hide");
+    nextBtn.classList.remove("hide");
+  }
+  toggleButtons(currentBox);
 });
