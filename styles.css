@@ -16,10 +16,11 @@ body {
   margin: 0 auto;
   min-height: 100vh;
   color: #eaebc6;
-  background: linear-gradient(15deg, #babd42, #6e9086);
+  background: linear-gradient(to top left, #babd42, #6e9086);
   background-size: cover;
   background-repeat: no-repeat;
   background-size: 100%;
+  padding: 3rem 0;
 }
 
 .grid {
@@ -33,7 +34,7 @@ body {
 
 h1 {
   grid-column: 1/-1;
-  margin: 3rem 0;
+  margin-bottom: 3rem;
   text-align: center;
 }
 
@@ -132,6 +133,10 @@ h3 {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  overflow-y: scroll;
+}
+.options::-webkit-scrollbar {
+  display: none;
 }
 
 .options div {
@@ -174,4 +179,29 @@ h3 {
 .incorrect {
   border: 2px solid #babd42;
   background-color: #b7c8c36a;
+}
+
+@media screen and (max-width: 1200px) {
+  .grid {
+    /* grid-template-columns: 1fr 1fr; */
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .grid {
+    /* grid-template-columns: 1fr 1fr; */
+    width: 70%;
+    gap: 2rem;
+  }
+  nav {
+    grid-column: 1/-1;
+  }
+  main {
+    grid-column: 1/-1;
+  }
+
+  .nav-list {
+    gap: 1rem;
+  }
 }

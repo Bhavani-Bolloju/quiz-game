@@ -98,7 +98,6 @@ document.querySelector(".container").addEventListener("click", function (e) {
   optionChoose.classList.add("selectedOption");
   const answer = optionChoose.dataset.option;
   answers[group] = answer === solutions[group];
-  console.log(answers);
 });
 
 //submitting the result
